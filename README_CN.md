@@ -34,8 +34,8 @@
 
 ## 📸 截图
 
-> 上传后替换
-> ![screenshot](assets/demo.png)
+<img width="594" height="372" alt="image" src="https://github.com/user-attachments/assets/e59a8fc9-0098-4113-afaf-7a32b6da4903" />
+
 
 ---
 
@@ -76,11 +76,10 @@
 ## 📦 部署与使用
 
 ### ✅ Step 1 — Fork 项目
-
-### ✅ Step 2 — Pages 创建项目
-
-Build / Output 均留空
-得到：`https://xxxx.pages.dev`
+### 保存 `email-routing-worker.js` 文件
+### ✅ Step 2 — 创建 Workers 项目
+`构建` → `Workers 和 Pages` → `创建应用程序` → `拖放文件创建` → `将“email-routing-worker.js”文件拖入` → `部署`</br>
+得到：`https://xxxx.workers.dev`
 
 ### ✅ Step 3 — 绑定 Worker
 
@@ -91,12 +90,21 @@ Build / Output 均留空
 ### ✅ Step 4 — API Token
 
 Cloudflare → API Tokens → **创建**
+</br>
+<img width="254" height="139" alt="image" src="https://github.com/user-attachments/assets/31e40e80-cc4f-4866-9e08-26b6eb8a4847" />
 
-Pages → 环境变量(变量和机密)
+<h3>⚠️注意API权限设置</h3>
+<img width="1104" height="396" alt="image" src="https://github.com/user-attachments/assets/f70f5696-9a4a-47ea-8ae2-bbc819003d40" />
+
+### ✅ Step 5 — 在刚刚的worker中添加变量
+`Workers` → `设置` → `变量和机密`
 
 | Type           | Name           | Value    |
 | -------------- | -------------- | -------- |
 | Secret         | `CF_API_TOKEN` | 复制 token |
+
+<img width="397" height="420" alt="image" src="https://github.com/user-attachments/assets/c5315c28-3b66-4800-a809-015c3f8edd19" />
+</br>
 
 ---
 
