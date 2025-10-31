@@ -18,8 +18,12 @@ Turn any domain into a working mailbox — without servers, SMTP, or backend.
 * ✅ Auto-create MX / SPF / catch-all rules
 * ✅ `admin@domain` forwarding
 * ✅ Multi-language UI (English / 中文)
-* ✅ Deploy to Cloudflare Pages + Worker
+* ✅ Deploy to Cloudflare Worker
 * ✅ Beginner-friendly — no coding needed
+
+❗ **Requirements**:
+* ⚠️ You need a Cloudflare account  
+* ⚠️ You need to own a domain name
 
 ---
 
@@ -95,9 +99,9 @@ Cloudflare → My Profile → API Tokens → **Create Token**
 
 Add this variable in Pages:
 
-| Name           | Value      |
-| -------------- | ---------- |
-| `CF_API_TOKEN` | your token |
+| Type           | Name           | Value    |
+| -------------- | -------------- | -------- |
+| Secret         | `CF_API_TOKEN` | your token |
 
 ---
 
@@ -121,10 +125,6 @@ Then click ✅ one-click config
 * Must use Cloudflare NS
 * Wait DNS propagation
 * Domain must be yours (not free subdomain)
-
-### ❗ Free subdomain like `xxx.dpdns.org`?
-
-Not supported — unless the **root domain is on your Cloudflare**
 
 ---
 
