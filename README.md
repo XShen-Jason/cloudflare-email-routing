@@ -25,7 +25,7 @@ Turn any domain into a working mailbox — without servers, SMTP, or backend.
 
 ## 🚀 Live Demo
 
-> **🔗 [https://routing.yourdomain.com](https://routing.yourdomain.com)**
+> **🔗 [https://email-routing.qtzh.dpdns.org/](https://email-routing.qtzh.dpdns.org/)**
 
 ---
 
