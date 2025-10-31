@@ -25,7 +25,7 @@
 
 ## 🚀 在线体验
 
-> **🔗 [https://routing.yourdomain.com](https://routing.yourdomain.com)**
+> **🔗 [https://email-routing.qtzh.dpdns.org/](https://email-routing.qtzh.dpdns.org/)**
 
 ---
 
