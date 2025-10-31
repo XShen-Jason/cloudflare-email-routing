@@ -1,155 +1,137 @@
-## 🌐 Cloudflare Email Routing — One-Click Setup UI
+### 🌐 Language | 语言
 
-### 一键配置 Cloudflare 邮件路由（可视化界面）
-
-Turn any domain into a working mailbox — without servers, SMTP, or backend.
-无需服务器 / SMTP / 后端，即可把任意域名变成邮箱！
-
-✨ Features | 功能
-
-* ✅ One-click enable Cloudflare Email Routing
-* ✅ Auto-create MX / SPF / catch-all rules
-* ✅ admin@domain forwarding
-* ✅ Multi-language UI (English / 中文)
-* ✅ Deploy to Cloudflare Pages + Worker
-* ✅ Beginner-friendly — no coding
+**[English](#english-version)** | **[中文说明](#中文说明)**
 
 ---
 
-## 🚀 Live Demo / 在线体验
+## English Version
+
+## 🌐 Cloudflare Email Routing — One-Click Setup UI
+
+Turn any domain into a working mailbox — without servers, SMTP, or backend.
+
+✨ **Features**
+
+* ✅ One-click enable Cloudflare Email Routing
+* ✅ Auto-create MX / SPF / catch-all rules
+* ✅ `admin@domain` forwarding
+* ✅ Multi-language UI (English / 中文)
+* ✅ Deploy to Cloudflare Pages + Worker
+* ✅ Beginner-friendly — no coding needed
+
+---
+
+## 🚀 Live Demo
+
 > **🔗 [https://routing.yourdomain.com](https://routing.yourdomain.com)**
 
 ---
 
 ## 📸 UI Screenshot
 
-> 上传图片后替换👇
+> Replace after uploading
 > ![screenshot](assets/demo.png)
 
 ---
 
-## 📚 What this does / 本项目能做什么
+## 📚 What this does
 
-| 英文                                            | 中文                   |
-| --------------------------------------------- | -------------------- |
-| Automatically set up Cloudflare email routing | 自动开通 Cloudflare 邮箱路由 |
-| Verify domain & email                         | 检查域名与邮箱              |
-| Create destination address                    | 添加目标邮箱               |
-| Set catch-all → forward                       | 配置全域名转发规则            |
-| Set admin@ forward                            | 自动创建 `admin@` 转发     |
-| Simple UI for non-technical users             | 给新人用的可视化界面           |
+| Feature                    | Description                        |
+| -------------------------- | ---------------------------------- |
+| Auto-setup email routing   | Configures Cloudflare email system |
+| Verify domain & email      | Checks Cloudflare + mailbox        |
+| Create destination address | Set receive mailbox                |
+| Catch-all → forward        | Forward all domain emails          |
+| Auto `admin@`              | Quick email admin mapping          |
+| No-code UI                 | Made for beginners                 |
 
 ---
 
 ## 🧑‍🏫 Tutorial — Host Domain on Cloudflare
 
-### 教程：把域名托管到 Cloudflare
+### 1️⃣ Register / Log in
 
-#### 1️⃣ Register / Log in
+👉 [https://dash.cloudflare.com](https://dash.cloudflare.com)
 
-> 登录 Cloudflare：[https://dash.cloudflare.com](https://dash.cloudflare.com)
+### 2️⃣ Add domain
 
-#### 2️⃣ Add your domain
+**Add Site → enter domain → Free Plan**
 
-**Add Site → 输入域名 → Free Plan**
+### 3️⃣ Change name servers
 
-#### 3️⃣ Change domain DNS (IMPORTANT)
-
-去域名注册商，把 NS 修改为：
-
-| NS 服务器                    |
+| Cloudflare NS             |
 | ------------------------- |
 | `daisy.ns.cloudflare.com` |
 | `hal.ns.cloudflare.com`   |
 
-⚠️ 必须等 DNS 生效（通常几分钟）
+Wait a few minutes ✅
 
 ---
 
 ## 📦 Deploy & Use
 
-### 部署与使用
+### ✅ Step 1 — Fork this repo
 
-#### ✅ Step 1 — Fork / Clone repo
+### ✅ Step 2 — Create Cloudflare Pages
 
-点击 GitHub **Fork** 或下载代码
+Pages → Create project → connect repo
+**Build / Output: leave empty**
 
-#### ✅ Step 2 — Create Cloudflare Pages project
+Example URL: `https://yourproject.pages.dev`
 
-Cloudflare Pages → Create project
-选择 GitHub 仓库 → Framework = None
+### ✅ Step 3 — Bind Worker
 
-**Build command:** *empty*
-**Output folder:** *empty*
+Pages → Settings → Functions → Worker Binding
 
-部署完成后会得到一个 URL 🙌
+| Name           | Worker             |
+| -------------- | ------------------ |
+| `email-router` | Select your Worker |
 
-> 例：`https://yourproject.pages.dev`
+### ✅ Step 4 — Add API Token
 
-#### ✅ Step 3 — Bind Worker
+Cloudflare → My Profile → API Tokens → **Create Token**
 
-在 Pages 设置：
-**Functions > Add a Worker binding**
+Add this variable in Pages:
 
-| Name           | Worker        |
-| -------------- | ------------- |
-| `email-router` | 选择你部署的 Worker |
-
-> （你之前生成 Worker 的用户已经有了，这里只绑定）
-
-#### ✅ Step 4 — Add API Token
-
-Cloudflare Dashboard → My Profile → API Tokens →
-**Create token → Template: `Edit Cloudflare Workers` + Email routing permissions**
-
-然后在 **Pages → Settings → Environment Variables** 添加：
-
-| Name           | Value           |
-| -------------- | --------------- |
-| `CF_API_TOKEN` | your token here |
+| Name           | Value      |
+| -------------- | ---------- |
+| `CF_API_TOKEN` | your token |
 
 ---
 
-## 🎯 Use the Tool
+## 🎯 Use it
 
-### 开始使用！
+Open your Pages URL → enter:
 
-打开你的 Pages URL：
-输入：
+| Field       | Meaning        |
+| ----------- | -------------- |
+| Domain      | Your CF domain |
+| Destination | Real mailbox   |
 
-| 字段                | 说明                  |
-| ----------------- | ------------------- |
-| Domain            | 你托管在 Cloudflare 的域名 |
-| Destination email | 接收邮件的真实邮箱           |
-
-点击 ✅ 一键配置
-
-若目标邮箱未验证 → Cloudflare 会发验证邮件
-验证后再点一次即可
+Then click ✅ one-click config
 
 ---
 
-## ❓ Common Questions | 常见问题
+## ❓ FAQ
 
 ### ❌ Domain not found?
 
-* Make sure NS is Cloudflare
+* Must use Cloudflare NS
 * Wait DNS propagation
-* Domain must be paid or free second-level
+* Domain must be yours (not free subdomain)
 
-###❗ Sub-domain like `xxx.dpdns.org`?
+### ❗ Free subdomain like `xxx.dpdns.org`?
 
-Cloudflare Email Routing **only works on domains fully hosted on Cloudflare**
-第三方免费子域**不支持邮件路由**（除非整个主域托管到 CF）
+Not supported — unless the **root domain is on your Cloudflare**
 
 ---
 
-## 🛡️ Limits | 限制
+## 🛡️ Limits
 
-| Rule                                  | Explanation                 |
-| ------------------------------------- | --------------------------- |
-| Max destinations                      | ~200 per Cloudflare account |
-| One domain must be in your CF account | 必须托管在你账号下                   |
+| Rule                              | Info             |
+| --------------------------------- | ---------------- |
+| Max destinations                  | ~200 per account |
+| Domain must be in your CF account | required         |
 
 ---
 
@@ -159,6 +141,148 @@ MIT
 
 ---
 
-## 💬 Feedback / 反馈
+## 💬 Feedback
 
-欢迎 issue / PR / Star ⭐
+Issues / PR welcome ⭐
+
+---
+
+## 中文说明
+
+## 🌐 Cloudflare 一键邮箱转发 — 可视化面板
+
+无需服务器 / SMTP / 后端，即可把任意域名变成邮箱！
+
+✨ **功能特色**
+
+* ✅ 一键开通 Cloudflare 邮件路由
+* ✅ 自动创建 MX / SPF / 全域名转发
+* ✅ 自动创建 `admin@` 邮件
+* ✅ 中英双语界面
+* ✅ Cloudflare Pages + Worker
+* ✅ 新手友好，无需编程
+
+---
+
+## 🚀 在线体验
+
+> **🔗 [https://routing.yourdomain.com](https://routing.yourdomain.com)**
+
+---
+
+## 📸 截图
+
+> 上传后替换
+> ![screenshot](assets/demo.png)
+
+---
+
+## 📚 本工具能做什么
+
+| 功能            | 说明       |
+| ------------- | -------- |
+| 自动开通邮件路由      | 省去手动设置   |
+| 校验域名与邮箱       | 提示配置是否正确 |
+| 添加目标邮箱        | 设置真实收件地址 |
+| 全域名转发         | 收所有邮箱地址  |
+| `admin@` 快速创建 | 自动处理管理邮箱 |
+| 图形界面          | 给小白用     |
+
+---
+
+## 🧑‍🏫 教程：托管域名到 Cloudflare
+
+### 1️⃣ 登录 Cloudflare
+
+[https://dash.cloudflare.com](https://dash.cloudflare.com)
+
+### 2️⃣ 添加域名
+
+**Add Site → 输入域名 → 免费套餐**
+
+### 3️⃣ 修改 DNS
+
+| Cloudflare 域名服务器          |
+| ------------------------- |
+| `daisy.ns.cloudflare.com` |
+| `hal.ns.cloudflare.com`   |
+
+等待几分钟 ✅
+
+---
+
+## 📦 部署与使用
+
+### ✅ Step 1 — Fork 项目
+
+### ✅ Step 2 — Pages 创建项目
+
+Build / Output 均留空
+得到：`https://xxxx.pages.dev`
+
+### ✅ Step 3 — 绑定 Worker
+
+| 名称             | Worker      |
+| -------------- | ----------- |
+| `email-router` | 选择你的 Worker |
+
+### ✅ Step 4 — API Token
+
+Cloudflare → API Tokens → **创建**
+
+Pages → 环境变量
+
+| Name           | Value    |
+| -------------- | -------- |
+| `CF_API_TOKEN` | 复制 token |
+
+---
+
+## 🎯 使用方法
+
+打开 Pages 地址 → 输入
+
+| 字段          | 说明   |
+| ----------- | ---- |
+| Domain      | 你的域名 |
+| Destination | 收件邮箱 |
+
+点击 ✅ 自动配置
+
+---
+
+## ❓ 常见问题
+
+### ❌ 找不到域名？
+
+* NS 必须指向 Cloudflare
+* 等待解析生效
+* 不能用别人送的子域
+
+### ❗ `xxx.dpdns.org`?
+
+免费二级域**不支持**邮箱路由
+除非整个主域托管到 CF
+
+---
+
+## 🛡️ 限制
+
+| 规则          | 说明       |
+| ----------- | -------- |
+| 最多约 200 个邮箱 | CF 账号限制  |
+| 必须托管在你账号里   | 才能修改 DNS |
+
+---
+
+## ⚖️ License
+
+MIT
+
+---
+
+## 💬 反馈
+
+欢迎 Issue / PR / Star ⭐
+
+---
