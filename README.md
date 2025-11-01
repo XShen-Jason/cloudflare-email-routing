@@ -35,8 +35,8 @@ Turn any domain into a working mailbox — without servers, SMTP, or backend.
 
 ## 📸 UI Screenshot
 
-> Replace after uploading
-> ![screenshot](assets/demo.png)
+<img width="574" height="362" alt="image" src="https://github.com/user-attachments/assets/d7a50c34-4a96-4061-a458-b3ddc1dbe272" />
+
 
 ---
 
@@ -78,30 +78,32 @@ Wait a few minutes ✅
 
 ### ✅ Step 1 — Fork this repo
 
-### ✅ Step 2 — Create Cloudflare Pages
+### 保存 `email-routing-worker.js` 文件
 
-Pages → Create project → connect repo
-**Build / Output: leave empty**
+### ✅ Step 2 — Create Cloudflare Worker
+`Compute & Al` → `Workers & Pages` → `Create application` → `Drag and drop your files` → `Drag the“email-routing-worker.js”file into` → `Deploy`</br>
 
 Example URL: `https://yourproject.pages.dev`
 
-### ✅ Step 3 — Bind Worker
+### ✅ Step 3 — Add API Token
 
-Pages → Settings → Functions → Worker Binding
+Cloudflare → Manage account → Account API tokens → **Create Token**
+</br>
+<img width="239" height="132" alt="image" src="https://github.com/user-attachments/assets/9591523a-9322-45f5-8ec0-4473b86ee2aa" />
 
-| Name           | Worker             |
-| -------------- | ------------------ |
-| `email-router` | Select your Worker |
+<h3>⚠️API令牌权限设置</h3>
+<img width="1096" height="396" alt="image" src="https://github.com/user-attachments/assets/71dc59da-6887-4646-b95b-5766144237ac" />
 
-### ✅ Step 4 — Add API Token
-
-Cloudflare → My Profile → API Tokens → **Create Token**
-
-Add this variable in Pages:
+### ✅ Step 4 — Add variables to the worker just now
+`email-routing-worker` → `Settings` → `Variables and Secrets`
 
 | Type           | Name           | Value    |
 | -------------- | -------------- | -------- |
 | Secret         | `CF_API_TOKEN` | your token |
+
+<img width="370" height="293" alt="image" src="https://github.com/user-attachments/assets/09c10663-4348-4046-8c88-13551320489c" />
+
+</br>
 
 ---
 
