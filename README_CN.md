@@ -76,28 +76,24 @@
 ## 📦 部署与使用
 
 ### ✅ Step 1 — Fork 项目
+
 ### 保存 `email-routing-worker.js` 文件
-### ✅ Step 2 — 创建 Workers 项目
+
+### ✅ Step 2 — 创建 Worker 项目
 `构建` → `Workers 和 Pages` → `创建应用程序` → `拖放文件创建` → `将“email-routing-worker.js”文件拖入` → `部署`</br>
 得到：`https://xxxx.workers.dev`
 
-### ✅ Step 3 — 绑定 Worker
+### ✅ Step 3 — 创建 API 令牌
 
-| 名称             | Worker      |
-| -------------- | ----------- |
-| `email-router` | 选择你的 Worker |
-
-### ✅ Step 4 — API Token
-
-Cloudflare → API Tokens → **创建**
+Cloudflare → 账户管理 → 账户管理 → **创建**
 </br>
 <img width="254" height="139" alt="image" src="https://github.com/user-attachments/assets/31e40e80-cc4f-4866-9e08-26b6eb8a4847" />
 
-<h3>⚠️注意API权限设置</h3>
+<h3>⚠️API令牌权限设置</h3>
 <img width="1104" height="396" alt="image" src="https://github.com/user-attachments/assets/f70f5696-9a4a-47ea-8ae2-bbc819003d40" />
 
-### ✅ Step 5 — 在刚刚的worker中添加变量
-`Workers` → `设置` → `变量和机密`
+### ✅ Step 4 — 在刚刚的worker中添加变量
+`email-routing-worker` → `设置` → `变量和机密`
 
 | Type           | Name           | Value    |
 | -------------- | -------------- | -------- |
@@ -110,7 +106,7 @@ Cloudflare → API Tokens → **创建**
 
 ## 🎯 使用方法
 
-打开 Pages 地址 → 输入
+打开你项目的 Worker 地址 → 输入
 
 | 字段          | 说明   |
 | ----------- | ---- |
