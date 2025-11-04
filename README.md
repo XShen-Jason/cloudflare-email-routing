@@ -63,12 +63,7 @@ Turn any domain into a working mailbox — without servers, SMTP, or backend.
 
 **Add Site → enter domain → Free Plan**
 
-### 3️⃣ Change name servers
-
-| Cloudflare NS             |
-| ------------------------- |
-| `daisy.ns.cloudflare.com` |
-| `hal.ns.cloudflare.com`   |
+### 3️⃣ Modify the DNS name server provided to you by Cloudflare
 
 Wait a few minutes ✅
 
