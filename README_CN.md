@@ -62,12 +62,7 @@
 
 **Add Site → 输入域名 → 免费套餐**
 
-### 3️⃣ 修改 DNS
-
-| Cloudflare 域名服务器          |
-| ------------------------- |
-| `daisy.ns.cloudflare.com` |
-| `hal.ns.cloudflare.com`   |
+### 3️⃣ 修改 Cloudflare 给你提供的 DNS 名称服务器
 
 等待几分钟 ✅
 
